@@ -63,5 +63,7 @@
   }
   body {
     @apply bg-background text-foreground;
+    font-family: "Inter";
+    letter-spacing: 0.4px;
   }
 }

@@ -3,6 +3,8 @@ import localFont from "next/font/local";
 import { ClerkProvider } from "@clerk/nextjs";
 import "./globals.css";
 import Header from "@/components/Header";
+import Sidebar from "@/components/Sidebar";
+import { Toaster } from "@/components/ui/sonner";
 
 const geistSans = localFont({
   src: "./fonts/GeistVF.woff",
@@ -34,9 +36,13 @@ export default function RootLayout({
           <Header />
           <div className="flex min-h-screen">
             {/* Sidebar */}
-            <div></div>
-            <div className="bg-gray-50">{children}</div>
+
+            <Sidebar />
+            <div className="flex-1 p-8 bg-white overflow-y-auto">
+              {children}
+            </div>
           </div>
+          <Toaster />
         </body>
       </html>
     </ClerkProvider>
