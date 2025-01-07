@@ -75,7 +75,8 @@ export default function Editor() {
         {/* translate Doc */}
         <TranslateDoc doc={doc} />
         {/* Chat to Doc */}
-        <ChatToDoc doc={doc} />
+        {/* features implemented correctly does not work not because ot able to setup paid openai account min balance $5 */}
+        {/* <ChatToDoc doc={doc} /> */}
         {/* Dark Mode */}
         <Button className={style} onClick={() => setDarkMode(!darkMode)}>
           {darkMode ? <SunIcon /> : <MoonIcon />}
