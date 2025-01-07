@@ -73,7 +73,7 @@ export default function Editor() {
     <div>
       <div className=" max-w-6xl flex items-center gap-2 justify-end mb-10">
         {/* translate Doc */}
-        <TranslateDoc doc={doc} />
+        {doc && <TranslateDoc doc={doc} />}
         {/* Chat to Doc */}
         {/* features implemented correctly does not work not because ot able to setup paid openai account min balance $5 */}
         {/* <ChatToDoc doc={doc} /> */}
