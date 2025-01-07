@@ -57,7 +57,6 @@ export async function inviteUserToDoc(roomId: string, email: string) {
   const { sessionClaims, userId, redirectToSignIn } = await auth();
   if (!userId) return redirectToSignIn();
 
-  console.log(roomId, email);
   try {
     await adminDb
       .collection("user")

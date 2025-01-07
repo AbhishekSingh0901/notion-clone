@@ -6,7 +6,6 @@ import { NextRequest, NextResponse } from "next/server";
 export async function POST(req: NextRequest) {
   await auth.protect();
   const { sessionClaims } = await auth();
-  console.log(sessionClaims);
   const { room } = await req.json();
 
   const session = liveblocks.prepareSession(sessionClaims?.email, {

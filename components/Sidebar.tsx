@@ -39,7 +39,7 @@ export default function Sidebar() {
     user &&
       query(
         collectionGroup(db, "rooms"),
-        where("userId", "==", user.emailAddresses[0].toString())
+        where("userId", "==", user.emailAddresses[0].emailAddress.toString())
       )
   );
 
