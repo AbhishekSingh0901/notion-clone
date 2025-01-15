@@ -1,0 +1,19 @@
+{
+  "rewrites": [
+    {
+      "source": "/api/liveblocks/:path*",
+      "destination": "https://api.liveblocks.io/:path*"
+    }
+  ],
+  "headers": [
+    {
+      "source": "/api/liveblocks/:path*",
+      "headers": [
+        {
+          "key": "Authorization",
+          "value": "Bearer pk_prod_6wVJfvJcpOqDl2BrgQfj6Nm1m0p0nLOT3CR7h8B3CJ0sOaOfIQTOgWGgaFj2_vPl"
+        }
+      ]
+    }
+  ]
+}

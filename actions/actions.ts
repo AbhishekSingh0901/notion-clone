@@ -12,19 +12,17 @@ export async function createNewDocument() {
   const docCollectionRef = adminDb.collection("documents");
   const docRef = await docCollectionRef.add({ title: "New Document" });
 
-  if (sessionClaims.email) {
-    await adminDb
-      .collection("user")
-      .doc(sessionClaims.email!)
-      .collection("rooms")
-      .doc(docRef.id)
-      .set({
-        userId: sessionClaims.email!,
-        role: "owner",
-        createdAt: new Date(),
-        roomId: docRef.id,
-      });
-  }
+  await adminDb
+    .collection("user")
+    .doc(sessionClaims?.email!)
+    .collection("rooms")
+    .doc(docRef.id)
+    .set({
+      userId: sessionClaims?.email!,
+      role: "owner",
+      createdAt: new Date(),
+      roomId: docRef.id,
+    });
 
   return docRef.id;
 }
